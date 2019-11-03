@@ -1,0 +1,105 @@
+<input placeholder="Search" (input)="onInput($event)">
+<button (click)="onClick()">Click Search</button>
+
+<br>
+<div *ngIf="status">
+  {{search}}
+</div>
+
+<br>
+<br>
+
+<button (click)="isLoginClicker()">Login</button>
+<button (click)="isRegisterClicker()">Register</button>
+
+
+<div *ngIf="isLogin">
+  <form (ngSubmit)="loginUser()" #validFormLogin="ngForm">
+    <h3>LOGIN</h3>
+    <br>
+    <label [ngClass]="validEmail.invalid && validEmail.touched ? 'color-red' : 'color-black'"> Email </label>
+    <input placeholder="Email" name="emailLogin"
+           [(ngModel)]="employeeLogin.emailLogin"
+           #validEmail="ngModel"
+           required
+           email
+    >
+    <br>
+    <label [ngClass]="validPassword.invalid && validPassword.touched ? 'color-red' : 'color-black' "> Password </label>
+    <input placeholder="Password" name="passwordLogin"
+           [(ngModel)]="employeeLogin.passwordLogin"
+           #validPassword="ngModel"
+           required>
+    <br>
+    <button [disabled]="!validFormLogin.valid">Sing in</button>
+  </form>
+</div>
+
+<div> {{Login}} </div>
+
+<div *ngIf="isRegister">
+  <form (ngSubmit)="registerUser()" #validFormRegister="ngForm">
+    <h3>REGISTER</h3>
+    <br>
+    <label [ngClass]="validName.invalid && validName.touched ? 'color-red' : 'color-black'"> NAME </label>
+    <input placeholder="Name" name="name"
+           [(ngModel)]="employee.name"
+           #validName="ngModel"
+           required
+    >
+    <br>
+    <label [ngClass]="validEmail.invalid && validEmail.touched ? 'color-red' : 'color-black'"> EMAIL </label>
+    <input placeholder="Email" name="email"
+           [(ngModel)]="employee.email"
+           #validEmail="ngModel"
+           required
+           email
+           minlength="5"
+    >
+    <br>
+    <label [ngClass]="validPassword.invalid && validPassword.touched ? 'color-red' : 'color-black'"> PASSWORD </label>
+    <input placeholder="Password" name="password"
+           [(ngModel)]="employee.password"
+           #validPassword="ngModel"
+           required
+           minlength="5"
+           maxlength="10"
+    >
+    <br>
+    <label> AGE </label>
+    <input placeholder="Age" name="age"
+           [(ngModel)]="employee.age">
+    <br>
+    <button [disabled]="!validFormRegister.valid">Register</button>
+  </form>
+</div>
+
+
+<br>
+<br>
+<br>
+
+<button (click)="isShowHouses()">Show Houses</button>
+
+<div *ngIf="isHouses">
+  <div *ngFor="let house of houses" style="border: 2px solid green">
+    <!--  {{houses | json}}-->
+    Address: {{house.address}}
+    <br>
+    Price: {{house.price}}
+    <br>
+    Owner: {{house.owner.name}}
+    <br>
+    <button (click)="isShowHouse(house.id_house)">Show all info</button>
+    <br>
+    <div *ngIf="house.id_house === index">
+      SquareMeters: {{house.squareMeters}}
+      <br>
+      Floors: {{house.floors}}
+    </div>
+  </div>
+</div>
+
+
+
+
