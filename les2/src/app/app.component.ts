@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
+<<<<<<< HEAD
+=======
 import {NgForm} from "@angular/forms";
+>>>>>>> add validity and form
 
 @Component({
   selector: 'app-root',
@@ -13,6 +16,34 @@ export class AppComponent {
   isLogin: boolean = false;
   isRegister: boolean = false;
   isHouses: boolean = false;
+<<<<<<< HEAD
+
+  houses: Array<any> = [
+    {
+      adress: 'Lviv',
+      price: 45000,
+      user: 'Roman',
+      squareMeters: 47,
+      floors: 2,
+    },
+    {
+      adress: 'Odesa',
+      price: 55000,
+      user: 'Taras',
+      squareMeters: 87,
+      floors: 2
+    },
+    {
+      adress: 'Ternopil',
+      price: 22000,
+      user: 'Dima',
+      squareMeters: 59,
+      floors: 1
+    }
+  ];
+
+  user = [
+=======
   isShow: boolean = false;
   index: number = -1;
   Login: string = '';
@@ -31,6 +62,7 @@ export class AppComponent {
   };
 
   user: Array<any> = [
+>>>>>>> add validity and form
     {
       name: 'Roman',
       email: 'roman@doma.net',
@@ -54,6 +86,8 @@ export class AppComponent {
     }
   ];
 
+<<<<<<< HEAD
+=======
   houses: Array<any> = [
     {
       address: 'Lviv',
@@ -82,6 +116,7 @@ export class AppComponent {
   ];
 
 
+>>>>>>> add validity and form
   onInput(ev) {
     this.search = ev.target.value;
   };
@@ -102,6 +137,10 @@ export class AppComponent {
 
   isShowHouses() {
     this.isHouses = !this.isHouses;
+<<<<<<< HEAD
+  }
+}
+=======
   };
 
   isShowHouse(idHouse: number) {
@@ -122,3 +161,4 @@ export class AppComponent {
   }
 }
 
+>>>>>>> add validity and form

@@ -12,6 +12,29 @@
 <button (click)="isLoginClicker()">Login</button>
 <button (click)="isRegisterClicker()">Register</button>
 
+<<<<<<< HEAD
+<div *ngIf="isLogin">
+  <h3>LOGIN</h3>
+  <br>
+  <input placeholder="Email">
+  <br>
+  <input placeholder="Password">
+  <br>
+  <button>Sing in</button>
+</div>
+
+<div *ngIf="isRegister">
+  <h3>REGISTER</h3>
+  <br>
+  <input placeholder="Name">
+  <br>
+  <input placeholder="Email">
+  <br>
+  <input placeholder="Password">
+  <br>
+  <input placeholder="Age">
+  <button>Register</button>
+=======
 
 <div *ngIf="isLogin">
   <form (ngSubmit)="loginUser()" #validFormLogin="ngForm">
@@ -72,6 +95,7 @@
     <br>
     <button [disabled]="!validFormRegister.valid">Register</button>
   </form>
+>>>>>>> add validity and form
 </div>
 
 
@@ -82,6 +106,15 @@
 <button (click)="isShowHouses()">Show Houses</button>
 
 <div *ngIf="isHouses">
+<<<<<<< HEAD
+  <div *ngFor="let house of houses">
+    <!--  {{houses | json}}-->
+    Adress: {{house.adress}}
+    <br>
+    Price: {{house.price}}
+    <br>
+    Owner: {{house.owner}}
+=======
   <div *ngFor="let house of houses" style="border: 2px solid green">
     <!--  {{houses | json}}-->
     Address: {{house.address}}
@@ -97,9 +130,14 @@
       <br>
       Floors: {{house.floors}}
     </div>
+>>>>>>> add validity and form
   </div>
 </div>
 
 
+<<<<<<< HEAD
+<p>sgsgsgrgsefseferg</p>
+=======
 
 
+>>>>>>> add validity and form
